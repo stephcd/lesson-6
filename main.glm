@@ -1,0 +1,39 @@
+#ifmissing "123.glm"
+#model get IEEE/123
+#endif
+#include "123.glm"
+
+// Task 1 - Load CSV data
+module climate;
+object csv_reader
+{
+    name sample;
+    filename sample.csv;
+}
+object climate
+{
+    tmyfile sample.csv;
+    reader sample;
+}
+
+// Task 2 - Get historical weather data
+#ifmissing "historical.glm"
+#python -m nsrdb_weather -y=2020 -p=37.5,-122.4 -g=historical.glm
+#endif
+#include "historical.glm"
+
+// Task 3 - Get realtime weather data
+#python -m metar2glm -c realtime KSFO >realtime.glm
+#include "realtime.glm"
+
+// Task 4 - Get forecast weather data
+#python -m noaa_forecast -p=37.5,-122.4 -c=forecast.csv -n=forecast -g=forecast.glm
+#include "forecast.glm"
+clock
+{
+    timezone "${NOAA_FORECAST_TIMEZONE}";
+    starttime "${NOAA_FORECAST_STARTTIME}";
+    stoptime "${NOAA_FORECAST_STOPTIME}";
+}
+
+#output "IEEE-123-voltage-profile.png" -t profile -l 10
