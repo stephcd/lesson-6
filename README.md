@@ -1,3 +1,5 @@
+[![Simulation](../../actions/workflows/main.yml/badge.svg)](../../actions/workflows/main.yml)
+
 # Lesson 6 - Managing weather
 
 The goal of this lesson is to introduce that various ways of getting and using weather data in a GridLAB-D simulation.  The specific learning objectives are the following.
