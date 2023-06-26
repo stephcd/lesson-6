@@ -9,7 +9,7 @@ The goal of this lesson is to introduce that various ways of getting and using w
 
 ## Reading CSV Data
 
-Normally TMY data is loaded from a TMY3 file using a [climate object](https://docs.gridlabd.us/index.html?owner=arras-energy&project=gridlabd&branch=master&folder=/Module/Climate&doc=/Module/Climate/Climate.md).  This data can be used to provide typical weather data for any year past, present, or future.  If you want to provide alternative TMY data, you can either generate you own TMY3 file (which can be difficult) or you can define a [CSV reader]([http](https://docs.gridlabd.us/index.html?owner=arras-energy&project=gridlabd&branch=master&folder=/Module/Climate&doc=/Module/Climate/Csv_reader.md) to load a more generic data file as TMY.  
+Normally TMY data is loaded from a TMY3 file using a [climate object](https://docs.gridlabd.us/index.html?owner=arras-energy&project=gridlabd&branch=master&folder=/Module/Climate&doc=/Module/Climate/Climate.md).  This data can be used to provide typical weather data for any year past, present, or future.  If you want to provide alternative TMY data, you can either generate you own TMY3 file (which can be difficult) or you can define a [CSV reader](https://docs.gridlabd.us/index.html?owner=arras-energy&project=gridlabd&branch=master&folder=/Module/Climate&doc=/Module/Climate/Csv_reader.md) to load a more generic data file as TMY.  
 
 ## Downloading Historical Data
 
