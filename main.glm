@@ -29,7 +29,6 @@ object climate
 // Task 4 - Get forecast weather data
 #python -m noaa_forecast -p=37.5,-122.4 -c=forecast.csv -n=forecast -g=forecast.glm
 #include "forecast.glm"
-
 clock
 {
     timezone "${NOAA_FORECAST_TIMEZONE}";
