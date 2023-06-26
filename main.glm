@@ -1,0 +1,25 @@
+#ifmissing "123.glm"
+#model get IEEE/123
+#endif
+#include "123.glm"
+
+// Task 1 - load CSV data
+module climate;
+object csv_reader
+{
+    name sample;
+    filename sample.csv;
+}
+object climate
+{
+    tmyfile sample.csv;
+    reader sample;
+}
+clock
+{
+    timezone PST+8PDT;
+    starttime "2025-01-01 00:00:00 PST";
+    stoptime "2026-01-01 00:00:00 PST";
+}
+
+#output "IEEE-123-voltage-profile.png" -t profile -l 10
