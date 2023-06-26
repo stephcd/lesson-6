@@ -20,6 +20,7 @@ jobs:
       run: |
         mkdir -p $HOME/.nsrdb
         echo $NSRDB_CREDENTIALS > $HOME/.nsrdb/credentials.json
+        cat $HOME/.nsrdb/credentials.json
 
     - name: Cache weather file
       id: weather
