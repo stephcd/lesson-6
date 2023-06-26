@@ -17,6 +17,8 @@ Normally TMY data is loaded from a TMY3 file using a [climate object](https://do
 
 Historical data can be retrieved from the National Solar Radiation Database (NSRDB) using the Python `nsrdb_weather` module.  The tool only allows access to historical weather records in North America, so you have to specify the year using `-y=YEAR` and geographic location using `-p=LAT,LON`.  You also have to specify the name of the GLM file in which the historical weather object is stored using `-g=FILENAME.glm`.
 
+The NSRDB database requires access credentials. In GitHub, you must use the [Settings/Secrets/Actions](../../settings/secrets/actions) tab to create an actions secret. Click the "New repository secret" button and add your NSRDB credentials, giving it a name of your choice. If you have forked this repository, you can use the name `NSRDB_CREDENTIAL`. To get your NSRDB credential, you should visit the [NSRDB website](https://developer.nrel.gov/signup/). You should save the credentials in the format `{"YOUR_EMAIL": "YOUR_API_KEY"}`. Once you have the credentials, you can add them to [the workflow file](.github/workflows/main.yml).
+
 ## Download Realtime Data
 
 Realtime weather data can be accessed using the FAA's METAR system.  The Python module `metar2glm` can retrieve the weather at any airport in North America and generates a GLM file that can be saved and loaded.  Since the METAR object's default class name `weather` is the same as a `climate` module's class name, we have to rename the class using the option `-c CLASSNAME`.
@@ -40,6 +42,7 @@ The GLM file contains some helpful global variables you can use to identify what
 2. Get and load the historical weather for Redwood City, CA (37.5N,122.4W) for the year 2020.
    1. Get the historical weather object (see [`main.glm@21`](main.glm#L20-L22)). (Hint: the data doesn't change each time you run the command, so you have test for the existence of the file and avoid downloading the data more than once.)
    2. Load the historical data object (see [`main.glm@23`](main.glm#L23))
+   3. Add the credentials to your workflow file (see [`.github/workflows/main.yml@17`](.github/workflows/main.yml#L17-L22)).
 3. Get and load the realtime weather for San Francisco International Airport (KSFO).
    1. Get the realtime weather (see [`main.glm@26`](main.glm#L26))
    2. Load the realtime weather (see [`main.glm@27`](main.glm#L27))
