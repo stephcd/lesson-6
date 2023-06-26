@@ -26,9 +26,9 @@ TODO
 ## Tasks
 
 1. Load [sample.csv](sample.csv) file as TMY weather data ([`main.glm@6`](main.glm#L6-L23))
-   1. Add a CSV reader to read the file (see [`main.glm@6`](main.glm#L7-L12)).
-   2. Add a climate object to use the data from the CSV reader (see [`main.glm@6`](main.glm#L13-L17)).
-   3. Add a clock to specify the date range for which the TMY weather data is generated (see [`main.glm@6`](main.glm#L18-L23)).
+   1. Add a CSV reader to read the file (see [`main.glm@7`](main.glm#L7-L12)).
+   2. Add a climate object to use the data from the CSV reader (see [`main.glm@13`](main.glm#L13-L17)).
+   3. Add a clock to specify the date range for which the TMY weather data is generated (see [`main.glm@18`](main.glm#L18-L23)).
 
 # Exercices
 
