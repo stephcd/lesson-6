@@ -13,15 +13,21 @@ Normally TMY data is loaded from a TMY3 file using a [climate object](https://do
 
 ## Downloading Historical Data
 
-TODO
+Historical data can be retrieved from the National Solar Radiation Database (NSRDB) using the Python `nsrdb_weather` module.  The tool only allows access to historical weather records in North America, so you have to specify the year using `-y=YEAR` and geographic location using `-p=LAT,LON`.  You also have to specify the name of the GLM file in which the historical weather object is stored using `-g=FILENAME.glm`.
 
 ## Download Realtime Data
 
-TODO
+Realtime weather data can be accessed using the FAA's METAR system.  The Python module `metar2glm` can retrieve the weather at any airport in North America and generates a GLM file that can be saved and loaded.  Since the METAR object's default class name `weather` is the same as a `climate` module's class name, we have to rename the class using the option `-c CLASSNAME`.
 
 ## Downloading Forecast Data
 
-TODO
+Weather forecasts are downloaded from NOAA. Here too, you must specify the location using the `-p=LAT,LON` option. You can also specify the name of the CSV file using the `-c=FILENAME.csv` option, the name of the forecast object using the `-n=OBJECTNAME`, and the name of the GLM file using the `-g=FILENAME.glm` option.
+
+The GLM file contains some helpful global variables you can use to identify what time range is provided by the forecast:
+
+- `NOAA_FORECAST_TIMEZONE`, e.g., `PST+8PDT`
+- `NOAA_FORECAST_STARTTIME`, e.g., `2023-06-26T11:00:00-07:00`
+- `NOAA_FORECAST_STOPTIME`, e.g., `2023-07-09T09:00:00-07:00`
 
 ## Tasks
 
@@ -29,10 +35,20 @@ TODO
    1. Add a CSV reader to read the file (see [`main.glm@7`](main.glm#L7-L12)).
    2. Add a climate object to use the data from the CSV reader (see [`main.glm@13`](main.glm#L13-L17)).
    3. Add a clock to specify the date range for which the TMY weather data is generated (see [`main.glm@18`](main.glm#L18-L23)).
+2. Get and load the historical weather for Redwood City, CA (37.5N,122.4W) for the year 2020.
+   1. Get the historical weather object (see [`main.glm@21`](main.glm#L20-L22)). (Hint: the data doesn't change each time you run the command, so you have test for the existence of the file and avoid downloading the data more than once.)
+   2. Load the historical data object (see [`main.glm@23`](main.glm#L23))
+3. Get and load the realtime weather for San Francisco International Airport (KSFO).
+   1. Get the realtime weather (see [`main.glm@26`](main.glm#L26))
+   2. Load the realtime weather (see [`main.glm@27`](main.glm#L27))
+4. Get and load the weather forecast for Redwood City, CA, and set the simulation time to the forecast time.
+   1. Get the forecast (see [`main.glm@30`](main.glm#L30))
+   2. Load the forecast (see [`main.glm@31`](main.glm#L31)))
+   3. Set the clock (see [`main.glm@32`](main.glm#L32-L37)))
 
 # Exercices
 
-1. TODO
+1. Change the weather history, realtime, and forecast to run in Seattle, Washington.
 
 # More Information
 
