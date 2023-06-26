@@ -33,10 +33,10 @@ The GLM file contains some helpful global variables you can use to identify what
 
 ## Tasks
 
-1. Load [sample.csv](sample.csv) file as TMY weather data ([`main.glm@6`](main.glm#L6-L23))
-   1. Add a CSV reader to read the file (see [`main.glm@7`](main.glm#L7-L12)).
-   2. Add a climate object to use the data from the CSV reader (see [`main.glm@13`](main.glm#L13-L17)).
-   3. Add a clock to specify the date range for which the TMY weather data is generated (see [`main.glm@18`](main.glm#L18-L23)).
+1. Load [sample.csv](sample.csv) file as TMY weather data ([`main.glm@6`](main.glm#L6-L17))
+   1. Load the climate module (see [`main.glm@7`](main.glm#L7))
+   2. Add a CSV reader to read the file (see [`main.glm@8`](main.glm#L8-L12)).
+   3. Add a climate object to use the data from the CSV reader (see [`main.glm@13`](main.glm#L13-L17)).
 2. Get and load the historical weather for Redwood City, CA (37.5N,122.4W) for the year 2020.
    1. Get the historical weather object (see [`main.glm@21`](main.glm#L20-L22)). (Hint: the data doesn't change each time you run the command, so you have test for the existence of the file and avoid downloading the data more than once.)
    2. Load the historical data object (see [`main.glm@23`](main.glm#L23))
