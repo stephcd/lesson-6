@@ -2,7 +2,7 @@
 
 # Lesson 6 - Managing weather
 
-The goal of this lesson is to introduce that various ways of getting and using weather data in a GridLAB-D simulation.  The specific learning objectives are the following.
+The goal of this lesson is to introduce the various ways of getting and using weather data in a GridLAB-D simulation.  The specific learning objectives are the following.
 
 1. How to change from using TMY data to CSV data.
 2. How to obtain historical data from NSRDB.
