@@ -35,7 +35,7 @@ The GLM file contains some helpful global variables you can use to identify what
 
 ## Tasks
 
-1. Load [sample.csv](sample.csv) file as TMY weather data ([`main.glm@6`](main.glm#L6-L17))
+1. Load [`sample.csv`](sample.csv) file as TMY weather data ([`main.glm@6`](main.glm#L6-L17))
    1. Load the climate module (see [`main.glm@7`](main.glm#L7))
    2. Add a CSV reader to read the file (see [`main.glm@8`](main.glm#L8-L12)).
    3. Add a climate object to use the data from the CSV reader (see [`main.glm@13`](main.glm#L13-L17)).
