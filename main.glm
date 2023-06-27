@@ -18,7 +18,7 @@ object climate
 
 // Task 2 - Get historical weather data
 #ifmissing "historical.glm"
-#python -m nsrdb_weather -y=2020 -p=47.6,-122.3 -g=historical.glm
+#python -m nsrdb_weather -y=2020 -p=-122.3,47.6 -g=historical.glm
 #endif
 #include "historical.glm"
 
