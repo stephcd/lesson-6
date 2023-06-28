@@ -23,7 +23,7 @@ object climate
 #include "historical.glm"
 
 // Task 3 - Get realtime weather data
-#python -m metar2glm -c realtime SEA-TAC >realtime.glm
+#python -m metar2glm -c realtime KSEA >realtime.glm
 #include "realtime.glm"
 
 // Task 4 - Get forecast weather data
