@@ -27,7 +27,7 @@ object climate
 #include "realtime.glm"
 
 // Task 4 - Get forecast weather data
-#python -m noaa_forecast -p=47.6,-122.3 -c=forecast.csv -n=forecast -g=forecast.glm
+#python -m noaa_forecast -p=47.6,-122.3 -c=forecast.csv -n=forecast -g=forecast.glm 
 #include "forecast.glm"
 clock
 {
